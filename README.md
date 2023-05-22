@@ -27,7 +27,7 @@ The following commands are supported by the shell:
 3.	pwd - Print the current working directory.
 4.	echo - Print a message.
 5.	exit - Exit the shell.
-6.	
+
 Implementation Details
 
 •	The Simple Shell project is implemented using the C programming language, adhering to the following guidelines:
