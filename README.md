@@ -53,12 +53,3 @@ This shell can be further developed to support additional features. Some of the 
 Credits
 
 This shell was developed by Ian Kiguru and Derick Mokua.
-
-Authors 
-
-This contains a list of  individuals who have contributed to the development of this project. 
-1.	Ian Kiguru.
-Email: iankiguru72@outlook.com
-
-2.	Derick Mokua.
-Email: derickmokua@outlook.com
