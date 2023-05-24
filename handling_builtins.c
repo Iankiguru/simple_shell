@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * handling_builtins - Handles the execution of built-in functions.
+ * handling_builtins - Handles the execution of built-in commands.
  * @cmd: The relevant tokenized commands.
  * @aline: The relevant input read from stdin.
  * Return: 1 if the built-in command is executed, 0 if not.
