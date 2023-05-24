@@ -18,7 +18,7 @@ char *appending_path(char *apath, char *cmd)
 	if (apath == 0)
 		apath = "";
 
-buffer = malloc(sizeof(char) * (_strlen(path) + _strlen(command) + 2));
+buffer = malloc(sizeof(char) * (_strlen(apath) + _strlen(cmd) + 2));
 
 	if (!buffer)
 		return (NULL);

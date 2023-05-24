@@ -1,95 +1,90 @@
 #include "shell.h"
 
 /**
-* _strcmp - compares two strings
-* @s1: compared to s2;
-* @s2: compared to s1;
-*
-* Return: returns difference between strings
+* _strcmp - this function compares two strings together
+* @s1: the string being compared to s2;
+* @s2: the string being compared to s1;
+* Return:it returns difference between strings
 */
 int _strcmp(char *s1, char *s2)
 {
-	int i = 0, output;
+	int s = 0, output;
 
-	while (*(s1 + i) == *(s2 + i) && *(s1 + i) != '\0')
-		i++;
+	while (*(s1 + s) == *(s2 + s) && *(s1 + s) != '\0')
+		s++;
 
-	output = (*(s1 + i) - *(s2 + i));
+	output = (*(s1 + s) - *(s2 + s));
 
 	return (output);
 }
 
 /**
-* _strlen - returns the length of a string
-* @s: string passed
-*
-* Return: returns length of string passed
+* _strlen - this function returns the length of a given string
+* @s: the being string passed
+* Return:it returns length of string passed
 */
 int _strlen(char *s)
 {
-	int count = 0;
+	int num = 0;
 
 	while (*s != '\0')
 	{
-		count++;
+		num++;
 		s++;
 	}
-	return (count);
+	return (num);
 }
 
 /**
-* _strncmp - compares two strings up to n bytes
-* @s1: compared to s2
-* @s2: compared to s1
-* @n: number of bytes
-*
-* Return: difference between s1 and s2
+* _strncmp - this function compares two strings up to n bytes
+* @s1: the given string being compared to s2
+* @s2: the given string being compared to s1
+* @n: the given number of bytes
+* Return: it returns the difference between s1 and s2
 */
 int _strncmp(char *s1, char *s2, int n)
 {
-	int i;
+	int m;
 
-	for (i = 0; s1[i] && s2[i] && i < n; i++)
+	for (m = 0; s1[m] && s2[m] && m < n; m++)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		if (s1[m] != s2[m])
+			return (s1[m] - s2[m]);
 	}
 	return (0);
 }
 
 /**
-* _strdup - dupicates string
-* @s: to be duplicated
-*
-* Return: pointer to duplicate string
+* _strdup - this function dupicates a given string
+* @s: thegiven string to be duplicated
+* Return: it returns a pointer to duplicate string
 */
 char *_strdup(char *s)
 {
-	char *ptr;
-	int i, len;
+	char *pointer;
+	int k, length;
 
 	if (s == NULL)
 		return (NULL);
 
-	len = _strlen(s);
+	length = _strlen(s);
 
-	ptr = malloc(sizeof(char) * (len + 1));
-	if (!ptr)
+	pointer = malloc(sizeof(char) * (length + 1));
+	if (!pointer)
 		return (NULL);
-	for (i = 0; *s != '\0'; s++, i++)
-		ptr[i] = s[0];
+	for (k = 0; *s != '\0'; s++, k++)
+		pointer[k] = s[0];
 
-	ptr[i++] = '\0';
-	return (ptr);
+	pointer[k++] = '\0';
+	return (pointer);
 }
 
 /**
-* _strchr - locates a character in a string
-* @s: string to be checked
-* @c: character to be located
-*
-* Return: returns pointer to first occurence of character
-* or NULL if character not found
+* _strchr - this function locates a character in a given string
+* @s: the given string to be checked
+* @c: the given character to be located
+* Return: it returns pointer to the first instance of the relevant character
+*or NULL
 */
 char *_strchr(char *s, char c)
 {
@@ -100,7 +95,9 @@ char *_strchr(char *s, char c)
 		s++;
 	}
 	if (!c)
+	{
 		return (s);
+	}
 	return (NULL);
 }
 

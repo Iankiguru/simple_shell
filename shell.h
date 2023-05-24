@@ -36,16 +36,16 @@ char *_strdup(char *s);
 char *_strchr(char *s, char c);
 
 void the_execution(char *pc, char **command);
-char *find_path(void);
+char *finding_path(void);
 
 /* helper function for efficient free */
 void free_buffers(char **buf);
 
-struct builtin
+struct built_ins
 {
-	char *env;
-	char *exit;
-} builtin;
+	char *enve;
+	char *exited;
+} built_ins;
 
 struct info
 {

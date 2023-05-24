@@ -13,7 +13,7 @@ char *testing_aPath(char **aPath, char *cmd)
 
 	while (aPath[s])
 	{
-		opt = appending_aPath(aPath[s], cmd);
+		opt = appending_path(aPath[s], cmd);
 		if (access(opt, F_OK | X_OK) == 0)
 			return (opt);
 		free(opt);

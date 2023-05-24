@@ -1,86 +1,50 @@
 #include "shell.h"
 
 /**
- * count_tokens - Counts the number of tokens in a string.
- * @str: The string to count tokens from.
- * @delim: The delimiter used to tokenize the string.
- * Return: The number of tokens.
- */
-static int count_tokens(char *str, char *delim)
-{
-	int count = 0;
-	int is_token = 0;
-
-	while (*str)
-	{
-		if (strchr(delim, *str) && !is_token)
-		{
-			count++;
-			is_token = 1;
-		}
-		else if (!strchr(delim, *str))
-		{
-			is_token = 0;
-		}
-		str++;
-	}
-
-	return (count);
-}
-
-/**
- * tokenize_string - Tokenizes a string into an array of tokens.
- * @str: The string to tokenize.
- * @delim: The delimiter used to tokenize the string.
- * @token_count: The number of tokens.
- * Return: The array of tokens.
- */
-static char **tokenize_string(char *str, char *delim, int token_count)
-{
-	char **tokens;
-	char *token;
-	int i = 0;
-
-	tokens = malloc(sizeof(char *) * (token_count + 1));
-	if (tokens == NULL)
-		return (NULL);
-
-	token = strtok(str, delim);
-	while (token)
-	{
-		tokens[i] = strdup(token);
-		if (tokens[i] == NULL)
-		{
-			free_tokens(tokens, i);
-			return (NULL);
-		}
-		token = strtok(NULL, delim);
-		i++;
-	}
-	tokens[i] = NULL;
-
-	return (tokens);
-}
-
-/**
- * the_tokenizer - Creates tokens from a given input.
- * @aline: The source to be tokenized.
- * Return: The array of tokens.
- */
+* the_tokenizer - this function creates the tokens from the given input
+*@aline: the given string to be tokenized
+*Return: it returns an array of strings (tokens)
+*/
 char **the_tokenizer(char *aline)
 {
-	char *buffer;
-	char **tokened;
-	int token_count;
+	char *buffer = NULL, *bufferm = NULL, *token = NULL, *denim = " :\t\r\n";
+	char **tokens = NULL;
+	int tokensize = 1;
+	size_t index = 0, flags = 0;
 
 	buffer = _strdup(aline);
-	if (buffer == NULL)
+	if (!buffer)
 		return (NULL);
+	bufferm = buffer;
 
-	token_count = count_tokens(buffer, " :\t\r\n");
-	tokened = tokenize_string(buffer, " :\t\r\n", token_count);
+	while (*bufferm)
+	{
+		if (_strchr(denim, *bufferm) != NULL && flags == 0)
+		{
+			tokensize++;
+			flags = 1;
+		}
+		else if (_strchr(denim, *bufferm) == NULL && flags == 1)
+			flags = 0;
+		bufferm++;
+	}
+
+	tokens = malloc(sizeof(char *) * (tokensize + 1));
+
+	token = strtok(buffer, denim);
+	while (token)
+	{
+		tokens[index] = _strdup(token);
+		if (tokens[index] == NULL)
+		{
+			free(tokens);
+			return (NULL);
+		}
+		token = strtok(NULL, denim);
+		index++;
+	}
+	tokens[index] = NULL;
 	free(buffer);
-
-	return (tokened);
+	return (tokens);
 }
 
