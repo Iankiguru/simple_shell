@@ -1,20 +1,20 @@
 #include "shell.h"
 
 /**
-* free_buffers - this fuction frees the buffers
-* @buffer:the buffer to be freed
+* free_buffers - frees the buffers
+* @buffer:The buffer to be freed.
 * Return: void
 */
 void free_buffers(char **buffer)
 {
-	int j = 0;
+	int index = 0;
 
 	if (!buffer || buffer == NULL)
 		return;
-	while (buffer[j])
+	while (buffer[index])
 	{
-		free(buffer[j]);
-		j++;
+		free(buffer[index]);
+		index++;
 	}
 	free(buffer);
 }
