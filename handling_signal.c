@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
-*handling_signal- this function keeps track of the interactive mode
-*@J: this is the signal number
-*Return: void
+*handling_signal- this is a function that keeps track of the interactive mode
+*@J: this is the signal number.
+*Return:  returns void
 */
 
 void handling_signal(int J)
