@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * exiting_cmd - Handles the exit command.
+ * exiting_cmd - A command that handles the exit command.
  * @cmd: The relevant tokenized command.
  * @aline: The relevant input read from stdin.
  * Return: void.
