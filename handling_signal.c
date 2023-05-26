@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
-*handling_signal- this is a function that keeps track of the interactive mode
+*handling_signal-keeps track of the interactive mode
 *@J: this is the signal number.
 *Return:  returns void
 */
