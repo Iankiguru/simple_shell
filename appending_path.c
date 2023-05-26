@@ -4,7 +4,7 @@
 * appending_path -adds a path to the command
 * @apath: the path of command
 * @cmd: command entered by user
-* Return:  this function returns buffer containing command with path on success.
+* Return: returns buffer containing command with path on success.
 * NULL on failure
 */
 char *appending_path(char *apath, char *cmd)
