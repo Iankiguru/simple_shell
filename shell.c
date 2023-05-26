@@ -1,6 +1,7 @@
 #include "shell.h"
+
 /**
-* main -this main function  carries out the read, execute then print output loop
+* main - carries out the read, execute then print output loop
 * @ac:the relevant  argument count
 * @av:the relevant  argument vector
 * @envp:the certain environment vector
