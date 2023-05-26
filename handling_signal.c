@@ -8,10 +8,17 @@
 
 void handling_signal(int J)
 {
-	int J;
-	J = 0;
 	(void)J;
-	write(STDERR_FILENO, "\n", 1);
-	write(STDERR_FILENO, "$ ", 2);
+	DIR *d;
+	struct dirent *dir;
+	d = opendir(".");
+	if (d)
+	{
+		while ((dir = readdir(d)) != NULL)
+		{
+			printf("%s\n", dir->d_name);
+		}
+		closedir(d);
+	}
 }
 
